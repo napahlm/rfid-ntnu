@@ -1,5 +1,36 @@
 # RFID Scanning of NTNU cards
 
+## Quick test
+
+Clone repository.
+
+```
+cd /project-folder
+git clone git@github.com:napahlm/rfid-ntnu.git
+```
+
+Create virtual environment on Ubuntu:
+```
+cd /path/to/project-folder/repository
+python3 -m venv env
+source env/bin/activate
+```
+
+Install dependancies:
+```
+pip3 install -r /path/to/project-folder/requirements.txt
+```
+
+Test script:
+```
+python3 rfid.py
+```
+
+Deactivate venv:
+```
+deactivate
+```
+
 ## Context and other sources
 
 Code that uses a basic RFID USB readerreads the emitted ID of a NTNU card and returns the EM number on the backside. This work is a combination of similar work I've found[^1] [^2] [^3]. Make NTNU has also made something equivalent for an Arduino board[^4].
