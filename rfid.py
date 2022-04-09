@@ -1,6 +1,12 @@
 import evdev
 from evdev import categorize, ecodes
 
+def reverseBytes(number):
+    binary = "{0:0>32b}".format(number) # zero-padded 32-bit binary
+    # split up in bytes and reverse them respectively
+    byteList = [binary[i:i+8][::-1] for i in range(0, 32, 8)]
+    return int(''.join(byteList), 2) # join list and convert binary to decimal
+
 class Device():
     name = 'Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader'
 
@@ -25,13 +31,6 @@ class Device():
             exit()
 
     @classmethod
-    def reverseBytes(number):
-        binary = "{0:0>32b}".format(number) # zero-padded 32-bit binary
-        # split up in bytes and reverse them respectively
-        byteList = [binary[i:i+8][::-1] for i in range(0, 32, 8)]
-        return int(''.join(byteList), 2) # join list and convert binary to decimal
-
-    @classmethod
     def run(cls):
         device = cls.connect()
         container = []
@@ -47,8 +46,10 @@ class Device():
                         if digit == 'KEY_ENTER':
                             # create and dump the tag
                             tag = "".join(i.strip('KEY_') for i in container)
+                            print("ID: " + tag)
+
                             EM = reverseBytes(int(tag))
-                            print("EM:" + EM)
+                            print("EM: " + str(EM))
 
                             container = []
                         else:
