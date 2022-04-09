@@ -2,6 +2,8 @@
 
 ## Quick test
 
+*Tested last: April 9th 2022*
+
 Clone repository.
 
 ```
@@ -9,16 +11,16 @@ cd /project-folder
 git clone git@github.com:napahlm/rfid-ntnu.git
 ```
 
-Create virtual environment on Ubuntu:
+Create virtual environment (Ubuntu):
 ```
-cd /path/to/project-folder/repository
+cd /rfid-ntnu
 python3 -m venv env
 source env/bin/activate
 ```
 
-Install dependancies:
+Install dependencies:
 ```
-pip3 install -r /path/to/project-folder/requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Test script:
