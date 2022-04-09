@@ -30,7 +30,7 @@ Test script (Make sure reader is connected):
 python3 rfid.py
 ```
 
-Deactivate venv:
+Deactivate venv when finished:
 ```
 deactivate
 ```
