@@ -1,9 +1,6 @@
 import evdev
 from evdev import categorize, ecodes
 
-from rfid import reverseBytes
-
-
 class Device():
     name = 'Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader'
 
