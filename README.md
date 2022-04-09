@@ -31,15 +31,10 @@ The card emits 10 bytes of data. The ID we want is 4 bytes.
 
 ```
 1. Transform ID from decimal to zero-padded binary
-    1234567890 --> 01001001100101100000001011010010
 2. Split the binary into 4 different byte-sized groups
-    01001001 - 10010110 - 00000010 - 11010010
 3. Reverse the bits in each respective group
-    10010010 - 01101001 - 01000000 - 01001011
 4. Conjoin the reversed byte groups into one
-    10010010011010010100000001001011
 5. Transform from binary to decimal
-    10010010011010010100000001001011 --> 2456371275
 ```
 
 
